@@ -16,6 +16,10 @@ The Federated Data Sharing provides a set of APIs to query metadata, select data
 
 In Level 1 federated data sharing, you may have access to select row level data whereas in Level 2 you will only be able to specify your selection and computation task and have both executed remotely. This means that your analysis plan needs to adapt to the protocol.
 
+## How to interact with the API
+
+The [User guide](https://github.com/federated-data-sharing/common-api/blob/master/doc/User_Guide.md) for the Common API has examples of how to interact with the API, get metadata, or make a selection using `R`, `python` or a low-level command line tool like `curl`.
+
 ## Preparing for federated analysis
 
 As a scientist, statistician or data scientist, you may be used to developing scripts working directly with data - your `R` or `python` scripts can load the data directly, or maybe you're using a spreadsheet package or a statistical tool which wraps up the analysis plan for you. If you're using federated analysis this may not be an option for you - the data is held remotely. Your interaction with the data will be via the programming interface ("API") or a tool that uses it. Whereas you would normally expect a high degree of iteration (or "trial and error") when working with local data, you need to plan for a different form of iteration.
@@ -46,10 +50,6 @@ Examples of staging or phasing analysis might reflect a standard research or dat
 - validating models
 
 A modular and composable approach to your analysis code will allow you to iterate at each stage and if necessary combine the analysis into reproducible process. This should reduce frustrations with not having direct access to data.
-
-## How to interact with the API
-
-The [User guide](https://github.com/federated-data-sharing/common-api/blob/master/doc/User_Guide.md) for the Common API has examples of how to interact with the API, get metadata, or make a selection using `R`, `python` or a low-level command line tool like `curl`.
 
 ## Defining a selection
 
