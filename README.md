@@ -97,3 +97,9 @@ When running a federated task in a more complex scenario, the same container mig
 
 ![Overview](./doc/sketch_full.jpg)
 
+## Worked examples
+
+Links to worked examples will be added here:
+
+* [Summarising data with a profiling script](./src/data-profiler/README.md)
+
