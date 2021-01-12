@@ -16,6 +16,10 @@ The Federated Data Sharing provides a set of APIs to query metadata, select data
 
 In Level 1 federated data sharing, you may have access to select row level data whereas in Level 2 you will only be able to specify your selection and computation task and have both executed remotely. This means that your analysis plan needs to adapt to the protocol.
 
+> Note that in most cases you should expect the output of your computation to be "quarantined" and reviewed for disclosure risk or similar criteria by the data provider.
+
+> Note that for simplicity and portability, code should be developed in Linux compatible environments.
+
 ## How to interact with the API
 
 The [User guide](https://github.com/federated-data-sharing/common-api/blob/master/doc/User_Guide.md) for the Common API has examples of how to interact with the API, get metadata, or make a selection using `R`, `python` or a low-level command line tool like `curl`.
@@ -73,4 +77,14 @@ More details of how define GraphQL queries can be found on the [community pages]
 
 ## Containerising a script for federated compute
 
-TODO
+In order to execute a remote computation task, your analysis code must be packaged up in a docker container. 
+
+> For simplicity we use the word "script" for this code as this is common data science but your could be anything that is containerised including complex programmes with library or package dependencies all encapsulated within the container.
+
+A set of conventions set out how you should expect inputs to your containers or outputs of your computation to be handled. In the base, simple case your script should *read* one or more input CSV files corresponding to your selection query from a specified folder (`/mnt/input`) which may be read-only. Your script is then able to *write* one or more files to a specified folder (`/mnt/ouput`). It may also be possible to write logs to specific folders.
+
+In order to containerise the script, it is recommended to go through the following steps:
+
+1. Run the script on dummy or synthetic data on the command line on your local machine
+2. Package up the script in a container and run using local docker installation, via command line on your local machine
+3. Run the containerised script on one or more remote site via Federated Data Sharing API
