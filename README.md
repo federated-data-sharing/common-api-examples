@@ -8,9 +8,9 @@ This repository contains some worked examples of how to use the Federated Data S
 
 ## Overview 
 
-The Federated Data Sharing provides a set of APIs to query metadata, select data an perform computation on data held remotely. This is intended to support a cycle where you can:
+The Federated Data Sharing provides a set of APIs to query metadata, select data and perform computation on data held remotely. This is intended to support a cycle where you can:
 
-- get field-level detail of remote data
+- get field-level type and content metadata for remote data
 - define a selection (pick fields) or filter (pick rows) you want to analyse
 - execute some computation on the selection
 
