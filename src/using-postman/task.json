@@ -1,0 +1,36 @@
+{
+    "name": "Summary",
+    "description": "Profile input data",
+    "tags": {
+        "custom-tag": "exploratory",
+        "custom-tag": "generic"
+    },
+    "inputs": [
+        {
+            "content": "sample02 { study_name age sex race }"
+        }
+    ],
+    "outputs": [
+        {
+            "path": "/mnt/output/"
+        }
+    ],
+    "resources": {
+        "cpuCores": 1,
+        "ramGb": 1.0,
+        "diskGb": 100.0,
+        "preemptible": false
+    },
+    "executors": [
+        {
+            "image": "dockerhub.example.org/data-profiler:latest",
+            "command": [
+                "entrypoint",
+                "/mnt/input"
+            ],
+            "stdout": "/mnt/logs/stdout",
+            "stderr": "/mnt/logs/stderr",
+            "workdir": "/data"
+        }
+    ]
+}
