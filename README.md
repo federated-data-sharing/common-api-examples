@@ -13,5 +13,6 @@ The examples have been defined for the work in progress Version 1.1.0 of the Com
 
 Links to worked examples will be added here:
 
-- [Summarising data with a profiling script](./src/data-profiler/README.md)
 - [Using Postman](./src/using-postman/Using_Postman.md) to query a federated data sharing node.
+- [Summarising data with a profiling script](./src/data-profiler/README.md) - an example in Python
+- [Creating charts for all numeric variables](./src/data-charts/README.md) - an example in R

@@ -1,4 +1,4 @@
-FROM continuumio/anaconda3
+FROM rocker/tidyverse
 
 LABEL MAINTAINER="Common API team <info@fds-api.org>"
 
@@ -7,6 +7,6 @@ ENV CA_OUTPUT_FOLDER=/mnt/output
 
 WORKDIR /data
 
-COPY data-profiler.py /data
+COPY data-charts.R /data
 
-CMD ["python", "/data/data-profiler.py"]
+CMD ["Rscript", "/data/data-charts.R"]
