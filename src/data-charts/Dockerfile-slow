@@ -1,0 +1,14 @@
+FROM rocker/r-base
+# We could use the rocker/tidyverse image but we want to show how to install R packages here
+
+LABEL MAINTAINER="Common API team <info@fds-api.org>"
+
+RUN R -e "install.packages(c('readr', 'dplyr', 'ggplot2'), dependencies=TRUE, repos='https://cloud.r-project.org/')"
+
+ENV CA_INPUT_FOLDER=/mnt/input/
+ENV CA_OUTPUT_FOLDER=/mnt/output
+WORKDIR /data
+
+COPY data-charts.R /data
+
+CMD ["Rscript", "/data/data-charts.R"]
