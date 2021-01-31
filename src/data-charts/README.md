@@ -31,3 +31,28 @@ export CA_OUTPUT_FOLDER=./output
 Rscript data-charts.R
 ```
 Look at the output files to see the charts produced.
+
+Look at the output files to see the statistical summaries.
+
+Then, build the docker image
+```sh
+docker build . -t data-profiler
+```
+
+> Depending on your docker set up you may need to run this command prefixed by `sudo`
+
+Then run the container on the same local file:
+```sh
+rm output/*
+
+docker run -it\
+     --mount type=bind,source="`realpath $(pwd)/input`",target=/mnt/input\
+     --mount type=bind,source="`realpath $(pwd)/output`",target=/mnt/output\
+     data-charts:latest
+```
+
+> These commands are also provided as shell scripts
+
+Running this as as a federated data sharing task
+
+> TODO
