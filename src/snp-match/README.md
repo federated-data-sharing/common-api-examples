@@ -16,8 +16,12 @@ The example uses a file [`top_mutations.csv`](./top_mutations.csv) to list SNPs 
 - `mutated_from_allele` - the 'reference' sequence
 - `mutated_to_allele` - the 'mutated' sequence
 
-The matching algorithm will sift through a remote table of genese that have the core fields above plus a field `donor_id` - it will match on the specification of the SNP of interest and count unique donors that have a match.  Note that `hgnc_symbol` and `ensembl_gene_id` are not used in the matching process.
+The matching algorithm will sift through a remote table of genese that have the core fields above plus a field `donor_id` - it will match on the specification of the SNP of interest and count unique donors that have a match. All other fields are ignored. Note that `hgnc_symbol` and `ensembl_gene_id` are not used in the matching process.
 
 The results of the script are written to a CSV file `results.csv` which contains the SNP records plus an additional field `matches` which is the count of unique donors.
 
+## Running the example
 
+- When running locally via `run-local.sh` - the `top_mutations.csv` file is read and used. The script expects a file called `snp_clean.csv` in its input folder.
+- When running via Docker, the `top_mutations.csv` is built into the container - future iterations will take configuration in some other way. Test the Docker version via `run-docker.sh` 
+- When run from this folder, both approaches will read from the `./input` folder and write output to `./output/results.csv`
