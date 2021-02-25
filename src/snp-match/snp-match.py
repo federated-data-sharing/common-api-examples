@@ -48,7 +48,7 @@ if __name__ == '__main__':
             match_mutated_to_allele = snps['mutated_to_allele'] == r['mutated_to_allele']
             
             matches = snps.loc[match_chr & match_chr_start & match_chr_end & match_mutated_from_allele & match_mutated_to_allele]
-            unique_donors = matches['icgc_donor_id'].unique()
+            unique_donors = matches['donor_id'].unique()
             
             print(matches.shape, unique_donors.size, unique_donors)
             
