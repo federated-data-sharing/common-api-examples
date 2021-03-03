@@ -1,0 +1,14 @@
+{
+    "task":{
+        "name": "SNP Match",
+        "description":"This task looks for SNPs of interest and returns unique donor counts per SNP.",
+        "queryInput": {
+            "selectionQuery": "{ snp_clean { donor_id chromosome chromosome_start chromosome_end mutated_from_allele mutated_to_allele } }"
+        },
+        "container": {
+            "name":"snp-match",
+            "tag":"latest",
+            "registry":"<ACR_REGISTRY>"
+        }
+    }
+}
