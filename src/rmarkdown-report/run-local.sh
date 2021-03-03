@@ -3,4 +3,4 @@ export CA_OUTPUT_FOLDER=./output
 
 rm output/*
 
-Rscript report.R
+Rscript generate-report.R

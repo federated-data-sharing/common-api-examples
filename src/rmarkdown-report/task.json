@@ -1,0 +1,14 @@
+{
+    "task":{
+        "name": "task_summary",
+        "description":"This task returns a statistical summary of fields in the data",
+        "queryInput": {
+            "selectionQuery": "{ vital_signs { height weight hip_circumference  waist_circumference systolic_bp diastolic_bp } }"
+        },
+        "container": {
+            "name":"rmarkdown-report",
+            "tag":"latest",
+            "registry":"covid19acregistry.azurecr.io"
+        }
+    }
+}

@@ -10,7 +10,9 @@ ENV CA_OUTPUT_FOLDER=/mnt/output
 
 WORKDIR /data
 
+# This creates the R markdown output
+COPY generate-report.R /data
+# This is likely to change most often:
 COPY report.Rmd /data
-COPY report.R /data
 
-CMD ["Rscript", "/data/report.R"]
+CMD ["Rscript", "/data/generate-report.R"]
