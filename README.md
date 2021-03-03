@@ -16,4 +16,4 @@ Links to worked examples will be added here:
 - [Using Postman](./src/using-postman/Using_Postman.md) to query a federated data sharing node.
 - [Summarising data with a profiling script](./src/data-profiler/README.md) - an example in Python
 - [Creating charts for all numeric variables](./src/data-charts/README.md) - an example in R
-- [Matching SNPS](./src/snp-match) - an example combining data from multiple nodes with a genomic flavour, in Python.
+- [Matching SNPs](./src/snp-match/README.md) - an example combining data from multiple nodes with a genomic flavour, in Python.
