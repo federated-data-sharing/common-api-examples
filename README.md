@@ -17,3 +17,4 @@ Links to worked examples will be added here:
 - [Summarising data with a profiling script](./src/data-profiler/README.md) - an example in Python
 - [Creating charts for all numeric variables](./src/data-charts/README.md) - an example in R
 - [Matching SNPs](./src/snp-match/README.md) - an example combining data from multiple nodes with a genomic flavour, in Python.
+- [RMarkdown Report](./src/rmarkdown-report) - an example processing R Markdown remotely

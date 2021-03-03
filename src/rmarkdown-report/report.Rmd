@@ -1,0 +1,52 @@
+---
+title: "Sample Report"
+output:
+  html_document:
+    toc: true
+    theme: united
+    self_contained: false
+---
+
+```{r echo=FALSE}
+# Preamble: discover CSV files in the input folder
+input_folder <- Sys.getenv('CA_INPUT_FOLDER')
+if (!dir.exists(input_folder)) {
+    stop("Invalid input folder")
+}
+csv_files <- Sys.glob(file.path(input_folder, "*.csv"))
+```
+## Introduction
+
+We found `r length(csv_files)` files in the input folder: `r input_folder`.
+
+## Summarization of datasets
+
+```{r echo=FALSE, fig.width=7,fig.height=4,message=FALSE,results="asis"}
+for (i in 1:length(csv_files)) {
+    file <- csv_files[i]
+
+    filename = tools::file_path_sans_ext(basename(file))
+    # depends on 'asis'
+    cat(paste0('\n\n### Summary of "', filename, '"'))
+
+    df <- read_csv(file, progress=FALSE)
+    # did we get a data frame  
+    if ('data.frame' %in% class(df)) {
+        # Identify the numeric columns
+        df <- select_if(df, is.numeric)
+
+        field_names <- names(df)
+       
+        if (length(df) > 0) {
+            for (j in 1:length(df)) {
+                f <- field_names[j]
+                g <- ggplot(df, aes_string(x=paste0('`',f,'`'))) + geom_histogram(alpha = .5,fill = "dodgerblue")
+                print(g)
+            }
+        }
+    }
+    else {
+        print('Failed to read file as data frame')
+    }
+}
+```
