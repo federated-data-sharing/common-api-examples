@@ -1,1 +1,1 @@
-docker build . -t snp-match
+docker build . -t snp-match:latest
