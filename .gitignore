@@ -3,3 +3,6 @@ input
 output
 credentials.sh
 .ipynb_checkpoints
+.vscode
+.env
+.DS_Store
