@@ -1,1 +1,1 @@
-docker build . -t data-profiler
+docker build . -t data-profiler:latest

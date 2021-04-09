@@ -1,1 +1,1 @@
-docker build . -t data-charts
+docker build . -t data-charts:latest

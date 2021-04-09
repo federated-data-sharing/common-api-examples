@@ -1,1 +1,1 @@
-docker build . -t rmarkdown-report
+docker build . -t rmarkdown-report:latest
