@@ -55,6 +55,3 @@ Look at the output files to see the statistical summaries.
 ## Step 3: Run containerised script via federated data sharing task
 
 > TODO
-
-https://github.com/federated-data-sharing/common-api/blob/master/doc/User_Guide_Containerising_Tasks.md#containerising-a-script-as-a-federated-compute-task
-
