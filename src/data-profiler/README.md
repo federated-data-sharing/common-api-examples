@@ -29,7 +29,7 @@ python data-profiler.py
 ```
 Look at the output files to see the statistical summaries.
 
-## Step 2: Run containeised script via docker commandline 
+## Step 2: Run containerised script via docker commandline 
 
 - Build the docker image
 
