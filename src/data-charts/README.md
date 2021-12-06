@@ -13,11 +13,17 @@ The script itself [data-charts.R](./data-charts.R) finds any CSV files in the in
 
 R 3.6.1 or greater should be installed locally for the example to be run locally. The base Docker image will include a suitable version of R.
 
-## Step-by-step
+## Step 1: Run script locally on command line
 
-Create an `input` and an `output` folder here. Put one or more CSV files in the `input` folder.
+- Copy the repository on to your local machine. 
 
-Run the script directly, on the command line:
+- Create an `input` and an `output` folder here. Put one or more CSV files in the `input` folder under the directory ```.../src/data-charts```.
+
+![image](https://user-images.githubusercontent.com/91956839/144869174-6c533f6f-8772-4174-ab3a-8bbfb3279132.png)
+
+- Put one or more CSV files in the `input` folder.
+
+- Run the script directly, on the command line:
 ```sh
 rm output/*
 
