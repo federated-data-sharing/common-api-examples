@@ -2,16 +2,12 @@
 
 ## Overview
 
-This worked example is designed to show how an R script can be dockerised and could be deployed as a federated compute task with some basic characteristics that could be adapted to other use cases:
+This worked example is designed to show how an R script can be wrapped up as a docker container. To see a workflow diagram of the steps taken below go to [Containerising a script as a federated compute task](https://github.com/federated-data-sharing/common-api/blob/master/doc/User_Guide_Containerising_Tasks.md#containerising-a-script-as-a-federated-compute-task).
 
-- use a common base R docker image
-- install some dependencies
-- use a single R script as the main computation
-- configure an environment similar to the remote federated node
 
 To build up an understanding of how to run the scripts, the same task can be run locally, then via local Docker.
 
-The script itself finds any CSV files in the input folder, reads them in via `readr`, identifies numerical fields and plots histograms of each one.
+The script itself [data-charts.R](./data-charts.R) finds any CSV files in the input folder, reads them in via `readr`, identifies numerical fields and plots histograms of each one.
 
 ## Pre-requisites
 
@@ -56,3 +52,10 @@ docker run -it\
 Running this as as a federated data sharing task
 
 > TODO
+
+moved this section from overview (didn't want to delete it for now) could be deployed as a federated compute task with some basic characteristics that could be adapted to other use cases:
+
+- use a common base R docker image
+- install some dependencies
+- use a single R script as the main computation
+- configure an environment similar to the remote federated node
