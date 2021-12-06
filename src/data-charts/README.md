@@ -1,6 +1,6 @@
-# Data charts in R
+# README - Data-charts
 
-## Introduction
+## Overview
 
 This worked example is designed to show how an R script can be dockerised and could be deployed as a federated compute task with some basic characteristics that could be adapted to other use cases:
 
