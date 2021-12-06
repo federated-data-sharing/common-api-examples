@@ -36,14 +36,17 @@ Look at the output files to see the charts produced.
 
 Look at the output files to see the statistical summaries.
 
-Then, build the docker image
+## Step 2: Run containerised script via docker commandline 
+
+- Build the docker image
+
 ```sh
-docker build . -t data-profiler
+docker build . -t data-charts
 ```
 
 > Depending on your docker set up you may need to run this command prefixed by `sudo`
 
-Then run the container on the same local file:
+- Then run the container on the same local file:
 ```sh
 rm output/*
 
@@ -55,7 +58,7 @@ docker run -it\
 
 > These commands are also provided as shell scripts
 
-Running this as as a federated data sharing task
+## Step 3: Run containerised script via federated data sharing task
 
 > TODO
 
