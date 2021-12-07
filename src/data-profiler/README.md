@@ -8,6 +8,11 @@ This example is intended to work on any tabular data it finds in the input folde
 
 The script itself [data-profiler.py](./data-profiler.py) uses the [pandas](https://pandas.pydata.org/) library to create a brief statistical profile of each field in the source data and write these to an output file.
 
+The summary result from each csv file should have the following structure: 
+![image](https://user-images.githubusercontent.com/91956839/144863924-a45cf273-6b82-49f6-bde9-9d1068d11d46.png)
+
+
+
 ## Step 1: Run script locally on command line
 
 - Copy the repository on to your local machine. 
