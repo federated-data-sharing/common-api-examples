@@ -37,8 +37,6 @@ Rscript data-charts.R
 ```
 Look at the output files to see the charts produced.
 
-Look at the output files to see the statistical summaries.
-
 ## Step 2: Run containerised script via docker commandline 
 
 - Build the docker image
