@@ -2,24 +2,27 @@
 
 ## Overview
 
-This is a simple worked example of a summarisation task that can be wrapped up as a docker container. To see a workflow diagram of the steps taken below go to [Containerising a script as a federated compute task](https://github.com/federated-data-sharing/common-api/blob/master/doc/User_Guide_Containerising_Tasks.md#containerising-a-script-as-a-federated-compute-task).
+This worked example is designed to show how an R script can be wrapped up as a docker container. To see a workflow diagram of the steps taken below go to [Containerising a script as a federated compute task](https://github.com/federated-data-sharing/common-api/blob/master/doc/User_Guide_Containerising_Tasks.md#containerising-a-script-as-a-federated-compute-task).
 
-This example is intended to work on any tabular data it finds in the input folder specified. This means it can be used for data explorations: it makes few assumptions on the source data other than it being valid CSV. 
 
-The script itself [data-profiler.py](./data-profiler.py) uses the [pandas](https://pandas.pydata.org/) library to create a brief statistical profile of each field in the source data and write these to an output file.
+To build up an understanding of how to run the scripts, the same task can be run locally, then via local Docker.
 
-The summary result from each csv file should have the following structure: 
-![image](https://user-images.githubusercontent.com/91956839/144863924-a45cf273-6b82-49f6-bde9-9d1068d11d46.png)
+The script itself [data-charts.R](./data-charts.R) finds any CSV files in the input folder, reads them in via `readr`, identifies numerical fields and plots histograms of each one.
 
+## Pre-requisites
+
+- R 3.6.1 or greater should be installed locally for the example to be run locally. Depending on the operating system (Mac, Windows, Ubuntu, etc) you are using sreach for the relevent installation steps. 
+- ``Rscript`` which is a R interpreter used to execute R commands saved in a file with extesion ".R" will be needed locally. 
+- The base Docker image will include a suitable version of R.
 
 
 ## Step 1: Run script locally on command line
 
 - Copy the repository on to your local machine. 
 
-- Create an `input` and an `output` folder under the directory ```.../src/data-profiler```. 
+- Create an `input` and an `output` folder here. Put one or more CSV files in the `input` folder under the directory ```.../src/data-charts```.
 
-![image](https://user-images.githubusercontent.com/91956839/140361598-e4eb71b2-f058-457c-9066-93022acb5e48.png)
+![image](https://user-images.githubusercontent.com/91956839/144869174-6c533f6f-8772-4174-ab3a-8bbfb3279132.png)
 
 - Put one or more CSV files in the `input` folder.
 
@@ -30,16 +33,16 @@ rm output/*
 export CA_INPUT_FOLDER=./input
 export CA_OUTPUT_FOLDER=./output
 
-python data-profiler.py
+Rscript data-charts.R
 ```
-Look at the output files to see the statistical summaries.
+Look at the output files to see the charts produced.
 
 ## Step 2: Run containerised script via docker commandline 
 
 - Build the docker image
 
 ```sh
-docker build . -t data-profiler
+docker build . -t data-charts
 ```
 
 > Depending on your docker set up you may need to run this command prefixed by `sudo`
@@ -51,12 +54,18 @@ rm output/*
 docker run -it\
      --mount type=bind,source="`realpath $(pwd)/input`",target=/mnt/input\
      --mount type=bind,source="`realpath $(pwd)/output`",target=/mnt/output\
-     data-profiler:latest
+     data-charts:latest
 ```
-Look at the output files to see the statistical summaries.
 
 > These commands are also provided as shell scripts
 
 ## Step 3: Run containerised script via federated data sharing task
 
 > TODO
+
+moved this section from overview (didn't want to delete it for now) could be deployed as a federated compute task with some basic characteristics that could be adapted to other use cases:
+
+- use a common base R docker image
+- install some dependencies
+- use a single R script as the main computation
+- configure an environment similar to the remote federated node
