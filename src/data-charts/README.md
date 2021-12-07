@@ -11,7 +11,7 @@ The script itself [data-charts.R](./data-charts.R) finds any CSV files in the in
 
 ## Pre-requisites
 
-- R 3.6.1 or greater should be installed locally for the example to be run locally. Depending on the operating system (Mac, Windows, Ubuntu, etc) you are using sreach for the relevent installation staps.
+- R 3.6.1 or greater should be installed locally for the example to be run locally. Depending on the operating system (Mac, Windows, Ubuntu, etc) you are using sreach for the relevent installation steps. 
 - ``Rscript`` which is a R interpreter used to execute R commands saved in a file with extesion ".R" will be needed locally. 
 - The base Docker image will include a suitable version of R.
 
