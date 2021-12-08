@@ -7,7 +7,7 @@ This worked example is designed to show how an R script can be wrapped up as a d
 
 To build up an understanding of how to run the scripts, the same task can be run locally, then via local Docker.
 
-The script itself [data-charts.R](./data-charts.R) finds any CSV files in the input folder, reads them in via `readr`, identifies numerical fields and plots histograms of each one.
+The script itself [generate-report.R](./generate-report.R) redners the Rmarkdown file [report.Rmd](./report.Rmd) and creates an html output with all the histogram files for the numerical variables as seen in the [data-charts example](https://github.com/solmazeradat-aridhia/common-api-examples/tree/solmazeradat-aridhia-patch-1/src/data-charts).
 
 ## Pre-requisites
 
