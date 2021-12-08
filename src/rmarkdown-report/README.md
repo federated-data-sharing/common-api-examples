@@ -14,6 +14,10 @@ The script itself [generate-report.R](./generate-report.R) redners the Rmarkdown
 - R 3.6.1 or greater should be installed locally for the example to be run locally. Depending on the operating system (Mac, Windows, Ubuntu, etc) you are using sreach for the relevent installation steps. 
 - ``Rscript`` which is a R interpreter used to execute R commands saved in a file with extesion ".R" will be needed locally. 
 - The base Docker image will include a suitable version of R.
+- ``Pandoc`` package which can be installed by running
+```
+sudo apt-get install pandoc
+```
 
 
 ## Step 1: Run script locally on command line
@@ -33,7 +37,7 @@ rm output/*
 export CA_INPUT_FOLDER=./input
 export CA_OUTPUT_FOLDER=./output
 
-Rscript data-charts.R
+Rscript generate-report.R
 ```
 Look at the output files to see the charts produced.
 
