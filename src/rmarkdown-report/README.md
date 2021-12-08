@@ -47,7 +47,7 @@ Look at the output files to see the charts produced.
 - Build the docker image
 
 ```sh
-docker build . -t data-charts
+docker build . -t generate-report
 ```
 
 > Depending on your docker set up you may need to run this command prefixed by `sudo`
@@ -59,7 +59,7 @@ rm output/*
 docker run -it\
      --mount type=bind,source="`realpath $(pwd)/input`",target=/mnt/input\
      --mount type=bind,source="`realpath $(pwd)/output`",target=/mnt/output\
-     data-charts:latest
+     generate-report:latest
 ```
 
 > These commands are also provided as shell scripts
