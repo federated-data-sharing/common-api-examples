@@ -24,7 +24,7 @@ sudo apt-get install pandoc
 
 - Copy the repository on to your local machine. 
 
-- Create an `input` and an `output` folder here. Put one or more CSV files in the `input` folder under the directory ```.../src/data-charts```.
+- Create an `input` and an `output` folder here. Put one or more CSV files in the `input` folder under the directory ```.../src/rmarkdown-report```.
 
 ![image](https://user-images.githubusercontent.com/91956839/145202630-1c53bf8f-de6b-4c86-b5a7-fa5555d5e7e7.png)
 
