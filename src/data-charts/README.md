@@ -9,6 +9,10 @@ To build up an understanding of how to run the scripts, the same task can be run
 
 The script itself [data-charts.R](./data-charts.R) finds any CSV files in the input folder, reads them in via `readr`, identifies numerical fields and plots histograms of each one.
 
+A summary of the histogram charts genertated can be seen below: 
+![image](https://user-images.githubusercontent.com/91956839/145797849-b8324690-1873-409a-a30d-107ee5db96b1.png)
+
+
 ## Pre-requisites
 
 - R 3.6.1 or greater should be installed locally for the example to be run locally. Depending on the operating system (Mac, Windows, Ubuntu, etc) you are using sreach for the relevent installation steps. 
