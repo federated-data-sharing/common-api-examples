@@ -1,4 +1,4 @@
-# README - Data-charts
+# README - rmarkdown-report
 
 ## Overview
 
@@ -7,26 +7,27 @@ This worked example is designed to show how an R script can be wrapped up as a d
 
 To build up an understanding of how to run the scripts, the same task can be run locally, then via local Docker.
 
-The script itself [data-charts.R](./data-charts.R) finds any CSV files in the input folder, reads them in via `readr`, identifies numerical fields and plots histograms of each one.
-
-A summary of the histogram charts genertated can be seen below: 
-![image](https://user-images.githubusercontent.com/91956839/145797849-b8324690-1873-409a-a30d-107ee5db96b1.png)
-
+The script itself [generate-report.R](./generate-report.R) redners the Rmarkdown file [report.Rmd](./report.Rmd) and creates an html output with all the histogram files for the numerical variables as seen in the [data-charts example](https://github.com/solmazeradat-aridhia/common-api-examples/tree/solmazeradat-aridhia-patch-1/src/data-charts).
 
 ## Pre-requisites
 
 - R 3.6.1 or greater should be installed locally for the example to be run locally. Depending on the operating system (Mac, Windows, Ubuntu, etc) you are using sreach for the relevent installation steps. 
 - ``Rscript`` which is a R interpreter used to execute R commands saved in a file with extesion ".R" will be needed locally. 
 - The base Docker image will include a suitable version of R.
+- ``Pandoc`` package which can be installed by running
+```
+sudo apt-get install pandoc
+```
 
 
 ## Step 1: Run script locally on command line
 
 - Copy the repository on to your local machine. 
 
-- Create an `input` and an `output` folder here. Put one or more CSV files in the `input` folder under the directory ```.../src/data-charts```.
+- Create an `input` and an `output` folder here. Put one or more CSV files in the `input` folder under the directory ```.../src/rmarkdown-report```.
 
-![image](https://user-images.githubusercontent.com/91956839/144869174-6c533f6f-8772-4174-ab3a-8bbfb3279132.png)
+![image](https://user-images.githubusercontent.com/91956839/145202630-1c53bf8f-de6b-4c86-b5a7-fa5555d5e7e7.png)
+
 
 - Put one or more CSV files in the `input` folder.
 
@@ -37,7 +38,7 @@ rm output/*
 export CA_INPUT_FOLDER=./input
 export CA_OUTPUT_FOLDER=./output
 
-Rscript data-charts.R
+Rscript generate-report.R
 ```
 Look at the output files to see the charts produced.
 
@@ -46,7 +47,7 @@ Look at the output files to see the charts produced.
 - Build the docker image
 
 ```sh
-docker build . -t data-charts
+docker build . -t generate-report
 ```
 
 > Depending on your docker set up you may need to run this command prefixed by `sudo`
@@ -58,7 +59,7 @@ rm output/*
 docker run -it\
      --mount type=bind,source="`realpath $(pwd)/input`",target=/mnt/input\
      --mount type=bind,source="`realpath $(pwd)/output`",target=/mnt/output\
-     data-charts:latest
+     generate-report:latest
 ```
 
 > These commands are also provided as shell scripts

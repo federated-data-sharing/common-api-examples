@@ -1,3 +1,5 @@
+if (!require("tidyverse")) install.packages("tidyverse")
+
 library(readr)
 library(dplyr)
 library(ggplot2)

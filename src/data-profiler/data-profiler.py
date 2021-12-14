@@ -51,6 +51,9 @@ if __name__ == '__main__':
             if 'top' in all_summary.columns:
                 all_summary = all_summary.drop(columns=['top']) 
 
+            # count number of missing/NaN values in each column and add to all_summary
+            all_summary['null_count'] = df.isnull().sum(axis = 0)
+
             # write out to output_folder
             all_summary_path = f'{output_folder}/{basename}_summary.csv'
 
